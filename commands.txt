@@ -1,0 +1,2 @@
+clang --target=wasm32 -nostdlib -Os -Wl,--no-entry -Wl,--export-all -Wl,--allow-undefined program.c -o program.wasm
+curl -i -X POST localhost:3000/run -H "content-type: application/x-binary" --data-binary "@program.wasm"
